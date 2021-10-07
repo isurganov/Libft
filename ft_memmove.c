@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/07 16:42:26 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/07 16:42:27 by spzona           ###   ########.fr       */
+/*   Created: 2021/10/07 17:09:31 by spzona            #+#    #+#             */
+/*   Updated: 2021/10/07 19:20:57 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void		*ft_memmove(void *dst, const void *src, size_t len)
 {
-	write(1, &c, 1);
+    char *tmp;
+
+    tmp = (char *)malloc(sizeof(char) * len);
+    if (tmp == NULL)
+        return (NULL);
+        ft_memcpy (tmp, src, len);
+        ft_memcpy (dst, tmp, len);
+        free (tmp);
+        return (dst);
 }
