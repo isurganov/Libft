@@ -6,11 +6,11 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:24:58 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/09 17:25:04 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/09 17:44:56 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
