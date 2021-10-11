@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 16:42:22 by spzona            #+#    #+#             */
+/*   Updated: 2021/10/11 17:36:20 by spzona           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -18,6 +29,19 @@ static int			ft_cntwrd(char const *s, char c)
 			i++;
 	}
 	return (cntr);
+}
+
+static char	*ft_strncpy(char *dst, const char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (src[i] && i < n)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
 }
 
 static char			*ft_strndup(const char *s, size_t n)
