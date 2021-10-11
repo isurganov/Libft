@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:53:16 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/09 18:14:57 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/11 21:25:45 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,18 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	char	*str;
-
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
+	char *str;
+	size_t	n_len;
+	
+	if (s == NULL)
 		return (NULL);
-
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = 0;
+	if ((unsigned int) ft_strlen(s) < start)
+		return (ft_strdup(""));
+	n_len = ft_strlen(s + start);
+	if (n_len < len)
+		len = n_len;
+	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	ft_strlcpy(str, s + start, len +1);
 	return (str);
 }

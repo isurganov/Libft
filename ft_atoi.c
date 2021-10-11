@@ -6,17 +6,17 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:39:31 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/07 19:22:26 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/11 21:53:20 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	int		nbr;
+	long		nbr;
 
 	i = 0;
 	sign = 1;
@@ -30,6 +30,12 @@ int		ft_atoi(char *str)
 		if (str[i++] == '-')
 			sign = -1;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
 		nbr = (nbr * 10) + (str[i++] - 48);
+		if (nbr > 2147483647 && sign == 1)
+			return (-1);
+		if (nbr > 2147483648 && sign == -1)
+			return (0);
+	}
 	return (nbr * sign);
 }

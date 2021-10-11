@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:42:18 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/07 19:26:50 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/11 21:10:12 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
+	if ((dst == NULL) && (src == NULL))
+		return (NULL);
 	d = (char *)dst;
 	s = (char *)src;
 	while (i < n)
