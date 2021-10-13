@@ -6,81 +6,69 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 16:42:22 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/11 17:36:20 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 15:08:17 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_cntwrd(char const *s, char c)
+static int	ft_cnt_parts(const char *s, char c)
 {
-    unsigned int	i;
-	int				cntr;
+	int	cnt;
+	int	in_substring;
 
-	i = 0;
-	cntr = 0;
-    while (s[i])
+	in_substring = 0;
+	cnt = 0;
+	while (*s != '\0')
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			cntr++;
-		while (s[i] && (s[i] != c))
-			i++;
-	}
-	return (cntr);
-}
-
-static char	*ft_strncpy(char *dst, const char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	return (dst);
-}
-
-static char			*ft_strndup(const char *s, size_t n)
-{
-    char			*str;
-
-	str = (char *)malloc(sizeof(char) * n + 1);
-	if (str == NULL)
-		return (NULL);
-	str = ft_strncpy(str, s, n);
-	str[n] = '\0';
-	return (str);
-}
-
-char				**ft_split(char const *s, char c)
-{
-    int				i;
-	int				j;
-	int				k;
-	char			**tab;
-
-	i = 0;
-	k = 0;
-	tab = (char **)malloc(sizeof(char *) * (ft_cntwrd(s, c)) + 1);
-	if (tab == NULL)
-		return (NULL);
-    while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		j = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > j)
+		if (in_substring == 1 && *s == c)
+			in_substring = 0;
+		if (in_substring == 0 && *s != c)
 		{
-			tab[k] = ft_strndup(s + j, i - j);
-			k++;
+			in_substring = 1;
+			cnt++;
 		}
+		s++;
 	}
-	tab[k] = NULL;
-	return (tab);
+	return (cnt);
+}
+
+static int	ft_wlen(const char *s, char c)
+{
+	int	len;
+
+	len = 0;
+	while (*s != c && *s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**t;
+	int		nb_word;
+	int		index;
+
+	if (!s)
+		return (NULL);
+	index = 0;
+	nb_word = ft_cnt_parts((const char *)s, c);
+	t = (char **)malloc(sizeof(*t) * (ft_cnt_parts((const char *)s, c) + 1));
+	if (t == NULL)
+		return (NULL);
+	while (nb_word--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		t[index] = ft_substr((const char *)s, 0, ft_wlen((const char *) s, c));
+		if (t[index] == NULL)
+			return (NULL);
+		s = s + ft_wlen(s, c);
+		index++;
+	}
+	t[index] = NULL;
+	return (t);
 }

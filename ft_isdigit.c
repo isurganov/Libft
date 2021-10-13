@@ -6,13 +6,13 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:40:25 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/11 16:51:04 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:28:40 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

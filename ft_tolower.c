@@ -6,13 +6,13 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:42:45 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/07 16:42:47 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:30:21 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

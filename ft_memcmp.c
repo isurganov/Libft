@@ -6,13 +6,13 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 17:25:27 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/09 17:44:35 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:27:18 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*s1c;
 	unsigned char	*s2c;

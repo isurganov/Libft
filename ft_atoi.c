@@ -6,17 +6,17 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:39:31 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/11 21:53:20 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:27:49 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		i;
 	int		sign;
-	long		nbr;
+	long	nbr;
 
 	i = 0;
 	sign = 1;

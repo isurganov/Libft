@@ -6,9 +6,6 @@
 # include <fcntl.h>
 # include <stddef.h>
 
-# define BUFF_SIZE 32
-# define ERROR(value) if(value == 1) return (-1);
-
 typedef struct	s_list
 {
 	void			*content;

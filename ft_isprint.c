@@ -6,13 +6,13 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 16:40:35 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/07 16:42:09 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/13 13:29:31 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= ' ' && c <= '~')
 		return (1);
