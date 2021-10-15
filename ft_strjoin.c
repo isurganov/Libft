@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 18:27:19 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/13 13:53:40 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:30:33 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s1[i])
+	while (s1[i] != '\0')
 	{
-		str[j++] = s1[i];
+		str[i] = s1[i];
 		i++;
 	}
-	i = 0;
-	while (s2[i])
+	while (s2[j])
 	{
-		str[j++] = s2[i];
-		i++;
+		str[i + j] = s2[j];
+		j++;
 	}
-	str[j] = 0;
+	str[i + j] = '\0';
 	return (str);
 }

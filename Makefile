@@ -6,7 +6,7 @@
 #    By: spzona <spzona@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 18:26:43 by spzona            #+#    #+#              #
-#    Updated: 2021/10/13 17:20:52 by spzona           ###   ########.fr        #
+#    Updated: 2021/10/15 20:39:49 by spzona           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRC = ft_isdigit.c    ft_memset.c     ft_strchr.c     ft_strlen.c     ft_tolower
 		ft_isalpha.c    ft_memcpy.c     ft_putstr_fd.c  ft_strlcat.c    ft_strtrim.c \
 		ft_isascii.c    ft_memmove.c    ft_split.c      ft_strlcpy.c    ft_substr.c
 
+HEADER = libft.h
+
 OBJ = $(SRC:.c=.o)
 
 $(NAME): $(OBJ)
@@ -32,8 +34,8 @@ $(NAME): $(OBJ)
 		@ranlib $(NAME)
 		@echo "$(NAME) indexed"
 
-%.o: %.c 
-		@gcc $(FLAG) -c $< -o $@
+%.o: %.c ${HEADER}
+		@gcc $(FLAG) -c $< -o $@ -I ${HEADER}
 
 clean:
 		@rm -f $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 18:43:59 by spzona            #+#    #+#             */
-/*   Updated: 2021/10/13 13:54:31 by spzona           ###   ########.fr       */
+/*   Updated: 2021/10/15 17:06:33 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = 0;
 	while (start < end)
 		str[i++] = s1[start++];
-	str[i] = 0;
+	str[i] = '\0';
 	return (str);
 }
