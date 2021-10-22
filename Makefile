@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: spzona <spzona@student.42.fr>              +#+  +:+       +#+         #
+#    By: Arbiter <Arbiter@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 18:26:43 by spzona            #+#    #+#              #
-#    Updated: 2021/10/15 20:39:49 by spzona           ###   ########.fr        #
+#    Updated: 2021/10/21 22:30:46 by Arbiter          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,8 @@ $(NAME): $(OBJ)
 		@ranlib $(NAME)
 		@echo "$(NAME) indexed"
 
-%.o: %.c ${HEADER}
-		@gcc $(FLAG) -c $< -o $@ -I ${HEADER}
+%.o: %.c $(HEADER)
+		@gcc $(FLAG) -c $< -o $@ -I $(HEADER)
 
 clean:
 		@rm -f $(OBJ)
